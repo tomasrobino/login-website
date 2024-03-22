@@ -1,5 +1,5 @@
 export async function checkCredentials(credentials) {
-    return fetch("http://localhost/login", {
+    return fetch("http://localhost:5000/authenticate/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
