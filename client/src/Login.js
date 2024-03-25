@@ -1,14 +1,17 @@
 import { Button, TextField } from "@mui/material";
-import { useState } from "react";
 import { checkCredentials } from "./apiCalls";
 
-export default function Login(props) {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+export default function Login() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        props.setToken(await checkCredentials({username, password}));
+        const token = await checkCredentials({username, password});
+        if (token !== "notfound") {
+            localStorage.setItem("user", username);
+            localStorage.setItem("password", token);
+        } else {
+            //Error message
+        }
     }
 
     return (
