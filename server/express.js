@@ -8,8 +8,7 @@ const port = 5000;
 app.use(cors(), body.json());
 
 app.post("/authenticate", (req, res) => {
-    console.log(req.body);
-    //res.send(req);
+    res.send(true);
     //res.end(req)
 })
 
