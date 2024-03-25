@@ -12,7 +12,7 @@ export default function Login(props) {
     }
 
     return (
-        <div>
+        <div style={{ backgroundColor: "red", width: "fit-content", height: "fit-content" }}>
             <h3>Sign in!</h3>
             <form onSubmit={handleSubmit}>
                 <TextField label="Username" type="text" required onChange={e => setUsername(e.target.value)}/>
