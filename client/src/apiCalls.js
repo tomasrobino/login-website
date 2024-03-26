@@ -1,4 +1,4 @@
-export async function checkCredentials(credentials) {
+export async function loginCall(credentials) {
     return fetch("http://localhost:5000/authenticate/", {
         method: "POST",
         headers: {
