@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
-import Login from './Login';
 import Pages from "./Pages";
+import LoginOrSignUp from './LoginOrSignUp';
 
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
 
     return (
         <div className="App">
-            {loginOverlay ? <Login/> : null}
+            {loginOverlay ? <LoginOrSignUp/> : null}
             <Pages page={page} setPage={setPage} loginOverlay={loginOverlay} setLoginOverlay={setLoginOverlay} />
         </div>
     );
