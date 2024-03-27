@@ -12,7 +12,7 @@ export default function Login() {
         const token = await loginCall({ username, password});
         if (token !== "notfound") {
             localStorage.setItem("user", username);
-            localStorage.setItem("password", token);
+            localStorage.setItem("token", token);
             setError(false);
         } else {
             //Error message
