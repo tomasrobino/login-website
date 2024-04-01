@@ -20,7 +20,18 @@ app.post("/authenticate", (req, res) => {
         if (users.get(req.body.username) === req.body.password) {
             const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(SALTROUNDS));
             res.send(passwordHash);
-        } else res.send("notfound");     
+        } else res.send("notfound");
+    }
+})
+
+app.post("/register", (req, res) => {
+    if (req.body?.username && req.body?.password) {
+        if (users.get(req.body.username)) {
+            res.send("existinguser");
+        } else {
+            users.set(req.body.username, req.body.password);
+            res.send("success");
+        };
     }
 })
 
