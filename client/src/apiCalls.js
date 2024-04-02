@@ -17,3 +17,13 @@ export async function registerCall(credentials) {
         body: JSON.stringify(credentials)
     }).then(data => data.text());
 }
+
+export async function checkToken(credentials) {
+    return fetch("http://localhost:5000/token/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(credentials)
+    }).then(data => data.text());
+}
