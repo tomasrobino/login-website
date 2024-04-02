@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import { checkToken } from './apiCalls';
 
 
 export default function Pages(props) {
@@ -6,8 +7,11 @@ export default function Pages(props) {
         props.setLoginOverlay(!props.loginOverlay);
     }
     
-    function handleProfile() {
-        if (localStorage.getItem("token")) {
+    async function handleProfile() {
+        let username = localStorage.getItem("user");
+        let token = localStorage.getItem("token");
+        let check =  await checkToken({ username, token });
+        if (check === "success") {
             console.log("flsfbl")
             props.setPage(1);
         }
