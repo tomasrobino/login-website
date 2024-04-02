@@ -8,6 +8,8 @@ export default function Login() {
     const [password, setPassword] = useState();
 
     async function handleSubmit(event) {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
         event.preventDefault();
         const token = await loginCall({ username, password});
         if (token !== "notfound") {
