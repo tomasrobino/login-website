@@ -35,6 +35,16 @@ app.post("/register", (req, res) => {
     }
 })
 
+app.post("/token", (req, res) => {
+    if (req.body?.username && req.body?.token) {
+        if (bcrypt.compareSync(users.get(req.body.username), req.body.token)) {
+            res.send("success");
+        } else {
+            res.send("wrongtoken");
+        };
+    }
+})
+
 app.listen(port, () => {
     console.log("server listening on port "+port);
 })
