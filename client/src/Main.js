@@ -14,6 +14,7 @@ export default function Main(props) {
         if (check === "success") {
             console.log("flsfbl")
             props.setPage(1);
+            handleOverlay()
         }
     }
 
