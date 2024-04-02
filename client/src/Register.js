@@ -8,11 +8,11 @@ export default function Register(props) {
     const [password, setPassword] = useState();
 
     async function handleSubmit(event) {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
         event.preventDefault();
         const response = await registerCall({ username, password});
         if (response === "success") {
-            localStorage.removeItem("user");
-            localStorage.removeItem("token");
             setError(false);
             props.setLogOrReg(true);
         } else {
