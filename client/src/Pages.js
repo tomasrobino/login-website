@@ -1,5 +1,6 @@
-import { Button } from '@mui/material';
 import { checkToken } from './apiCalls';
+import Profile from './Profile';
+import Main from "./Main";
 
 
 export default function Pages(props) {
@@ -20,14 +21,11 @@ export default function Pages(props) {
     switch (props.page) {
         case 0:
             return (
-                <>
-                    <Button onClick={handleOverlay}>Login</Button>
-                    <Button onClick={handleProfile}>Profile</Button>
-                </>
+                <Main />
             )
         case 1:
-            return (
-                <p>uilewfdbewfli</p>
+            return(
+                <Profile/>
             )
         default:
             break;
