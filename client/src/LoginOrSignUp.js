@@ -1,3 +1,4 @@
+import './App.css';
 import { useEffect, useState } from "react";
 import Register from "./Register";
 import Login from "./Login";
@@ -17,7 +18,7 @@ export default function LoginOrSignUp() {
     }
 
     return(
-        <>
+        <div className="loginOrSignUp">
             {logOrReg ?
                 <>
                     <Login/>
@@ -29,6 +30,6 @@ export default function LoginOrSignUp() {
                     <Button onClick={handleButton}>Login</Button>
                 </>
             }
-        </>
+        </div>
     )
 }
