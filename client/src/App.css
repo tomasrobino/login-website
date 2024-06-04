@@ -1,5 +1,5 @@
 .loginOrSignUp {
-    background-color: green;
+    background-color: grey;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -8,4 +8,9 @@
     margin: auto;
     height: fit-content;
     width: fit-content;
-} 
+    border-radius: 10px;
+}
+
+.authenticationDiv {
+    background-color: lightgray;
+}

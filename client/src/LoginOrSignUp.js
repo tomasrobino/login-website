@@ -24,7 +24,7 @@ export default function LoginOrSignUp() {
                     <Login/>
                     <Button onClick={handleButton}>Register</Button>
                 </>
-                : 
+                :
                 <>
                     <Register setLogOrReg={setLogOrReg}/>
                     <Button onClick={handleButton}>Login</Button>

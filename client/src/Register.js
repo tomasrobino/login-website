@@ -22,7 +22,7 @@ export default function Register(props) {
     }
 
     return (
-        <div style={{ backgroundColor: "red", width: "fit-content", height: "fit-content" }}>
+        <div className="authenticationDiv">
             <h3>Sign up!</h3>
             <form onSubmit={handleSubmit}>
                 <TextField label="Username" type="text" required onChange={e => setUsername(e.target.value)}/>

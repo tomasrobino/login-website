@@ -23,9 +23,9 @@ export default function Login() {
     }
 
     return (
-        <div style={{ backgroundColor: "red", width: "fit-content", height: "fit-content" }}>
+        <div className="authenticationDiv">
             <h3>Sign in!</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column" }}>
                 <TextField label="Username" type="text" required onChange={e => setUsername(e.target.value)}/>
                 <TextField label="Password" type="password" required onChange={e => setPassword(e.target.value)}/>
                 <Button type="submit">Submit</Button>
